@@ -1,0 +1,16 @@
+body {
+    color: black;
+    background: linear-gradient(to right, #e74c3c, #000000);
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid black;
+    color: red;
+    background: linear-gradient(to right, #434343, #000000);
+}
+
+.dinamicP:hover {
+    cursor: pointer;
+    background-color: #f8fead;
+  }

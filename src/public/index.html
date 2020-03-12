@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script src="/js/main.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1>CHAT</h1>
+    </header>
+
+    <!-- NICK FORM -->
+    <div id="nickCard">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="card">
+                    <div class="card-header" style="text-align: center;">
+                        <h3>Enter your nick</h3>
+                    </div>
+                    <p id="nickError"></p>
+                    <div class="card-body">
+                        <input id="nickname" type="text" class="form-control" style="margin-bottom: 7px;" autofocus />
+                        <button class="btn btn-info btn-lg btn-block" onclick="sendNickName()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GLOBAL CHAT -->
+    <div id="ChatContainer" style="display: none;">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <!-- CARD HEADER-->
+                    <div class="card-header bg-dark text-white">
+                        <h4>Global Chat</h3>
+                    </div>
+                    <!-- CARD BODY-->
+                    <div id="chat" class="card-body"></div>
+                    <!-- CARD FOOTER -->
+                    <div id="message-form" class="card-footer">
+                        <div class="input-group">
+                            <input type="text" id="globalMessage" class="form-control" />
+                            <div class="input-group-append">
+                                <button class="btn btn-warning" onclick="sendGlobalMessage()">
+                                    <i class="fa fa-paper-plane"></i> Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- USERS -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h3>Users</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="nickNames"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRIVATE CHATS -->
+    <div id="privateChats" class="card-deck"></div>
+
+</body>
+
+</html>
